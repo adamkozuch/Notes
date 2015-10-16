@@ -1,0 +1,93 @@
+Zad 1
+Skonstruuj automat ze stosem akceotujacym język : 
+a) L1  = { a^n b^n : n=>1}
+b) L2 = { 0^k 1^l k>=l}
+c) L3 = {a^n b ^(2n) : n >=1}
+d) L4 = a^(2n) b ^ n : n >= 1}
+e) L5 = { ww^R : w ∈ {0,1}*}
+
+
+
+
+
+
+q0  a; A/AA=> q0 
+q0  (b; A/lambda) (b;Z/lambda) => q1
+q1   (b, A/lambda) (b,Z/lambda) => q1
+
+| |  | |   |A|  |A|
+| |=>|A|=> |A|=>|A|
+|Z|  |Z|   |Z|  |A|
+ 		|Z|
+
+
+
+regularne wyraznia = automaty skonczone
+gramatyki bezkontekstowe = automaty ze stosem 
+
+
+b)
+to powinno byc ok
+q0 (0,Z/A)(0,/AA)  => q0
+q0 (lambda :Z/Z)(lambda:Z/lambda) (lambda :A/A)  => q1 
+q1 (1,A/lambda)(lambda, A/;ambda)  => q1  
+
+c)
+q1 (lambda: Z/ZA)(lambda:A/AA) => q0
+q0 (a:Z/ZA)(a:A/AA)
+q0 (lambda:AZ)  => q2
+q2 (b:Z/lambda)(bA/lambda)  => q2
+
+
+d)
+
+q1 a/A/A  => q0
+q0 (a/Z/ZA)(a/A/AA)  =>  q1
+q0 (b/A/lambda)  => q2 
+q2 (lambda/Z/lambda)(b/A/lambda)  => q2 
+
+
+e) 
+
+
+
+
+Maszyna turinga 
+
+M = (Q- stany, suma, symbole robocze, B - pusty, f. przejscia, q0 stan poczatkowy, F - stany koncowe)
+Maszyny moga nie tylko akceptowac ale też liczyć. Maszyna Turinga akceptująca liczby parzyste.
+
+FUnkcja przejscia czyli jak maszyna działa
+
+
+
+
+FP(stan
+
+FP(q0,1) = (q0,1,p)
+FP(q0, 0) = (q0,0,p)
+FP(q0,B) = (q1, B, L)
+FP(q1, 0) =(qk,0,S)
+
+Zad 1 Skonstruuj maszynę Turinga akceptującą język 
+
+a) słowa nad alf{a,b} zaczynające i konczące się tą samą literą 
+b) L = {a^n b^n : n>=1}
+
+
+a)
+
+FP(q0,a) = Fp(q1,a,p)
+FP(q0,b) = FP(q2,b,p)
+FP(q1,a) = FP(q1,a,p)
+FP(q1,b) = FP(q1, b,p)
+FP(q2,a) = FP(q2,a,p)
+FP(q2,b) = FP(q2,b,p)
+FP(q1,B) = FP(q3,B,L)
+FP(q3,a) = FP(qk,a,S)
+FP(q2,B) = FP(q4, B,L)
+FP(q4,b) = FP(qk,b,s)
+
+b)
+
+

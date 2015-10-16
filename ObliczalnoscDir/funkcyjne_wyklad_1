@@ -1,0 +1,55 @@
+imperatywne - jak wynik zostaje obliczony
+deklaratywne 
+	-funkcyjne(lambda rachunek)
+	-logiczne(relacyjne)
+dlugość listy 
+imperatywne
+	int procedure (*int&){
+		i:=0;
+		while l \= nil do 
+			{i = i+1;
+			l = *(l.next)
+};
+return i;}
+funkcyjne
+	lenght []=0
+	lenght(x:l)  = 1 + lenght x //haskel sprawdza czy jedno z tych rownan da sie zastosowac od lewej do prawej
+
+length [1,2]
+-> 1 + length [2]
+->1 +(1 + lenght[])
+-> 1+ (1+0)-> 2
+
+Next example
+quicksort[]=[]
+quicksort(a :as)=
+	quicksort[b| b <-as , b<a]++ [a]
+	++quicksort[b | b <-as, b>a]
+
+Historia
+	A.Qurch , 1930
+	lambda rachunek(lambda x lambda y . x +y) 3 5 -> 8
+	turing zupelny
+	Lisp (McCarthy,1960)
+	
+Lisp
+ 	lsity : (1 2 3)
+	((lambda (x)) x +5)3) ->8
+-1975 GOrdon, Miles 
+	ML(Metalanguage)
+	Typy (bez deklaracji)// nie czysty bo ma przepisania 
+-Hope (Burstall, McQueen, 1980)
+	pattern matching 
+-Miranda ( Turnes , 1980)
+	lazy evaluation 
+-Haskell (Hudak, Levadler,1987)
+	*pattern matching
+	*lazy evaluation
+	*typy
+	*klasy typow	
+Literatura :
+Hutton, Programming in  Haskell
+Thompson, Haskell The craft of functional Programming
+Bird, Introduction to functional programming
+Abelson, Sussman Structure and Interpretation of computer programs(jezyk scheme)
+

@@ -1,0 +1,148 @@
+14:00-15:30
+
+Zad 1 . Dany jest automat niedeterministyczny 
+
+   |   0  |  1
+_________________________
+p  | {p,q}|{p}
+_________________________
+q  | {r}  |{r}
+________________________
+r  | {s}  | - 
+____________________
+s  | {s}  | {s} 
+
+p- poczatek
+s- koniec 
+
+Dokonaj determinizacji 
+*(liczby)-do siebie
+
+p*(0,1)  0=> q  (0,1)=> r  (0)=>  s*(0,1)
+
+Zdeterminizowany: 
+
+
+
+							 => {p,r,s}
+			 (1)=> 	 {p,r} (0)=> {p,q,s} (rozgalezia sie)
+ => {p}*(1)  (0)=> {p,q} 
+			 (0)=> 	{p,q,r}		      (0)=> 	{p,q,r,s}
+
+
+
+(- należy 
+
+L regularny  => 			automat z n stanow 
+{a, bc abc, a ...}			|w| > n 
+
+W = xyz (- L
+xyz ∈ L
+|xy| <= n
+|y| >= 1 
+
+Jeśli L jest regularny to istnieje n liczba stanow automatu ,że dla każdego słowa w ∈ L , |w|>n 
+w = xyz i :
+1 ) |xy| <= n
+2 ) |y| => 1
+3 ) xyz ∈ L i ∈ N 
+
+
+Przydatny do udowadniania że język nie jest regularny 
+
+
+Przyklad L = { a pow n b pow n : n ∈ N}
+
+ => Zalozmy ze L jest regularny 
+ => to istnieje automat o n stanach 
+ =>  w slowie W = a pow n b pow n , |w|= 2n>n
+musimy zastosowac petle 
+
+ => Istnieje podzial w = xyz 
+
+1) |xy| =<n i z tego wynikan x = a pow l && y = a pow k
+2) |y|=>1 z tego wynika k =>1
+3) xyz = a pow l a pow k n a pow (n -l - k) b pow n ∈ L
+
+
+
+Zad 2 Udowodnij że język L nie jest regularny
+
+L = { ww: w (-{0,1}*}
+
+u = 0 pow n 1 pow n
+uu = 0 pow n  1 pow n 0 pow n 1 pow n 
+
+
+|xy| <= n ; x =0 pow k && y = 0 pow l 
+
+|y| >=1
+i = 2
+
+xyz = 0 pow 1(0 pow l)pow 2 0 pow (n-k-l) 1 pow n 0 pow n 1 pow n
+
+
+
+Zad 3. Wykaz za dane jezyki sa bezkontekstowe 
+a) L1 = {a pow n b pow n .. n >=1}
+b) L2 = { a pow k b pow n  : k >= n >= 1}
+c) L3 = { W (- W od R(odwrocenie) : W (- {a,b}*}
+d) L4 = { a pow i b pow j c pow k : k = i + j , i , j , k >=0}
+e) L= { a pow i b pow j c pow k d pow l : i >j, k = 2l)
+
+G = ( {S}     ,       {a,b},      S,     P)
+    wszystkie  symbole robocze | wszystkie litery| symbol poczatkowy| produkcje 
+
+
+ 	P : S  =>  a S b    | w = aaabbb
+	    s  => ab
+        S  => a S b  =>  aaSbb  =>  aaabbb	
+b)
+
+S  =>  a S b
+S  =>  aS
+S  => ab    przkladowe slowo aaabb
+
+c) 
+
+S  =>  aSa
+S  =>  bSb
+S  =>  c
+
+d) 
+S =>  lambda
+S => aSc
+S =>  bTc
+
+
+
+S => aSc
+S => ac
+S => T
+T => bTc   T  => lambda 
+
+e)
+
+S => aSb
+S => aS
+S => R
+R => ccRd
+R  => lambda 
+
+
+S => SbR
+S => aS 
+S => 
+
+
+I to bedzie dobrze
+
+S => PR
+P => aP
+P => aPb
+p => a
+R => ccRd
+R => ccd
+R => lambda
+
+S => PR  => aPR => aabR  => aabccRd  => aabccccdd

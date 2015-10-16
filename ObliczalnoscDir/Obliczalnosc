@@ -1,0 +1,67 @@
+ na stronce wszystko
+2 kolokwia - po czterech zajeciach na początku listopada i na koniec 
+Zad 1 Dane sa jezyki nad alfabetem {a,b}. Wykaz ze sa regularne podajac wyr regularne 
+a) slowa o dlug. podzielnej przez 3
+b)slowa o parzystej liczbie liter a
+c ) zawierajacych podslowa aa i bb
+d) niezawieraj, podslowa aa 
+aa + b ||| {aa,b b}
+  lub
+(aa).b |||{aab}
+(aa)*b = {b,aab, aaab,.....}
+
+a)( (a+b)(a+b)(a+b))*
+
+b) (b* ab* ab*)*
+	bbbabbabbbbb 
+	babab ab ab
+c) (a + b)*aa(a+b)* . bb . (a+b)* + (a+b)*bb(a+b)* aa(a+b)* + (a+b)*bb(a+b)*aa(a+b)*
+
+d)pierwszy przypadek  => b*(abb*)* +(b*ba)*b*+a+b* + a(b*ba)* 
+drugi przypadek  => ((a + b)bb*)* (a+b)b* + lambda
+trzeci przypadek  =>  b*(abb*)* + (b*ba)*b*+ a(b*ba)*
+
+Zadanie 2 Dane sa języki nad alfabetem {0,1}
+Podaj automat skonczony je akceptujacy.
+a) slowa z litera na trzeciej pozycji
+b) slowa bedace parzystymi liczvami binarnymi
+c)              podzielnymi przez 3
+d) wersja (c) dla liczb dziesietnych
+
+
+ab + aa*
+L = {ab, a, aa,aaa,...}
+ => q0 a=> q1 b=> q3
+   a ||			
+    q3(petla do samej siebie z a)
+
+ 
+b)
+ => q1 (0,1) => q2 (0,1) => q3  (0)=> q4(petelka z 0,1)
+
+	 0           1      0          11011
+
+
+b) 
+q0(petelka (0,1)) (0)=> q2  "light" 
+
+c)trzy stany
+
+
+
+r0  (jeden w dwie strony)   r1
+
+    r2(zero w dwie strony do r1 i do samej siebie 1)
+
+
+liczba daje reszte 1
+doklejamy 0  => x0
+(3m + 1 )*2 = 6m + 2 = 3m'+ 2
+
+d)dziesiętne
+r0        r1
+
+     r2
+
+
+
