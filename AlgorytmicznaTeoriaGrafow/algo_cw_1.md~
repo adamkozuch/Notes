@@ -1,17 +1,9 @@
-Labolatorium 
+Labolatowium 
 1. Zaimolementuj struktury danych oraz procedury pozwalajace na przechowanie grafu w postaci macierzy sasiedztwa i :
 a) dodanie/ usunięcie krawędzi/ wierzcholka  mozliwosc czytania z pliku , pierwszy wiersz rozmiar macierzy 
 b) wypisanie stopnia wierzchołka, stopnia minimalnego i maksymalnego 
 c) wypisanie , ile jest wierzcholkow stopnia parzystego i nieparzystego
 d) wypisanie ( posortowanego nierosnaco ciągu stopni 
-
-
-
-
-
-
-
-
 
 2. W oparciu o reprezentację grafu w postaci macierzy sasiedztwa zaimplementuj procedure ltora sprawdza, czy w grafie 
 jest cykl  C3  ( czy graf zawiera podgraf izo C3) Czy jest trojkat.

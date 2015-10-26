@@ -1,0 +1,112 @@
+2 . Programowanie z kombinatorami 
+
+sum term next a b = if a >b then 0 else (term a) + (sum (next a ) b)
+
+sum-int a b  = sum id p1 a b
+
+id x = x
+p1 x = x +1
+
+sum_pi a b = if a>b then 0 else  1/(a*(a+2)) + (sum, (a+4), b)
+
+
+2 . Programowanie z kombinatorami 
+
+sum term next a b = if a >b then 0 else (term a) + (sum (next a ) b)
+
+sum-int a b  = sum id p1 a b
+
+id x = x
+p1 x = x +1
+
+sum_pi a b = if a>b then 0 else  1/(a*(a+2)) + (sum, (a+4), b)
+i
+FUnkcje anonimowe
+
+sum_int = sum(\x -> x) , (\x -> x+1)
+
+sum_pi = sum(\x -> 1/(x *(x+2))) (\x -> x+4)
+
+prod term next a b
+
+sum [] = 0
+sum (x:xs) = x + sum xs
+prod = Fun (+) 0
+prod [] = 1
+prod(x:xs) = x * prod xs
+prod = FUn (*) 1
+
+reverse l    
+reverse [] = []           
+reverse = Fun (?) ?
+
+
+foldl f e []  =e
+foldl f e (x:xs) = foldl  f (f e x) xs 
+
+
+    x1   x2  ...........xn
+ e->f -> f _> .........> f -> y
+
+y =f(...f(f(e,x0),x1).......,xn)
+
+Przykład 
+a) sum[1,2,4]= foldl (+) 0 [1,2,4] =
+	foldl(+) (0+1) [2,4]
+	= foldl (+) ((0 +1)+2) []
+	=foldl (+) (((0+1)+2)+4) []
+	= (((0+1)+2)+4)
+reverse = foldl []
+reverse (x : xs) = reverse xs ++[x]
+
+
+
+reverse = foldl (:) []
+reverse [1,2,3] = foldl (:) [] [1,2,3] = foldl (:) []:1 [2,3]
+
+
+
+flip f x y  = f y x
+
+flip (:) [] 1 = (:) 1 []
+
+reverse = foldl (flip(:))[]
+
+
+
+reverse [1,2,3] = foldl (flip(:))[][1,2,3] = foldl (flip(:))((flip(:)[] 1) [2,3]
+foldl ( flip(:)) ((flip(:)) (1:[]) 2)
+
+
+Przykład :
+
+Divide-and-Conquer
+
+	Problem a 
+	test: a -> Bool 
+	end : a -> b 
+	divide : a -> [a]
+	combine : [b] -> b
+
+dc test end divide combine p = 
+     if(test p)
+	then (end p)
+	else combine(map ((dc test end divide combine (divide p)))
+
+quicksort = dc (\x -> (length x <=1))
+		(\x -> x)
+		split 
+split [] = []
+split(a: as) = 
+	[[b| b <-as, b<a],
+	[b| b<-as, b>=a]]
+flatten a b = a ++ b 
+
+
+
+
+quicksort = 
+	dc(\x ->(length x <=1))
+	(\x -> x)
+	split
+	flatten

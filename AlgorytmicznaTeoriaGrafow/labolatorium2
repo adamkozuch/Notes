@@ -1,0 +1,115 @@
+
+2)        	1 [1,-1]
+	2[2,1]		3[3,1]
+4[5,4]				7[7,3]
+5[5,4]
+6[6,5]
+
+
+     	1 [1,-1]
+	2[2,1]		3[3,1]
+4[5,4]				7[7,3]
+5[5,4]
+6[6,5
+
+/([5,6],[7,3]) ([5,4],[3,1])([4,2],[1,-1])([2,1], ?) 
+
+[1,-1][2,1][3,1][4,2][7,3][5,4][6,5]
+
+
+1.1 
+a) n = 5, jeden cykl 
+
+
+1.4
+Załozmy, zw stop<=3, tw ogolny deg(v) <=3 szczeg v∈V  deg (v) >=4
+
+Wowczas 
+
+Suma deg(v) <= |v| * 3 = 9*3 = 27
+
+Ponadto wiemy ze suma v ∈ V deg(v) jest parzysta (
+
+A zatem stop(G) >= 4 
+
+1.5 G = (V,E), n >=2 W G istnieją dwa (rozne) wierchołki o tym samym stopniu.
+
+Możliwe stopnie 0,1,2,3, ... , n-1
+a) jest stopnia 0, to nie ma stopnia n-1;1,2... n-2
+b) jest stopien n-1 , to nie ma stopnia 0;1,2..n-1
+c)brak stopnia 0 i n-1;1,2..n-2
+
+Zasada szufladkowa  
+
+
+1.6.
+a)T
+b)F
+c)T 
+d)>2  ; F
+e)T(suma deg(v)=2m
+f)F
+
+1.7.
+
+a i b nie są bo mają rożne ciągi stopni
+
+Jeśli mają takie same ciągi stopnie to etykietujemy i sprawdzamy czy etykiety prawidłowo ze sobą sąsiadują.
+
+1.8. .. jak wygląda graf , ktory nie ma podgrafu indukowanego ~= P3.
+
+Skladowe spojnosci są izo K1 lub izo K2 
+
+Jak może wyglądać składowa spojnosci
+
+
+Taki graf sklada się z dowolnej liczby skladowych spojnosci z ktorych kazda jast izo do jakiegos grafu pełnego.
+
+1.9.
+a)T
+b)T
+c)F
+d)T
+e)F
+f)F
+
+1.10
+
+Qk-1 łączę kopie wierzcholkow Qk-1
+
+idea dowodu
+Najpierw pokazac,
+
+|E| = k*2^(k-1)
+
+1. Krok : |v| = 1   |E|=0=0*2^(0-1) = 0 
+
+2. Zalozenia indukcyjne  : teza prawdziwa dla 0 <= k'<k
+
+3. Krok indukcyjny . Rozgraniczy kostkę Qk, k>0
+
+	Qk powstaje z dwoch kopii Qk-1, stąd ma 
+(2* #liczba wierzholkow Q k-1) wierzcholkow, stąd ma 2*2^(k-1) = 2^k wierzcholkow
+
+
+Qk powstaje z dwoch kopii Qk-1,
+stąd ma 
+(2 *#krawedz Q k-1 +#wierzcholkow Q k-1) = 2^(k-1)
+
+stąd ma 2 * (k-1)*2^(k-2) + 2 ^(k-1)
+krawedzi czyli ma k*2 ^ (k-1) krawedzi
+
+1.11
+
+n - # wierzcholkow 
+m - # krawędzi 
+
+G = (V,E)
+r- regularny 
+suma deg(v)=2 *m
+sume r = 2*m
+n*r = 2*m
+r = (2*m)/n
+
+1.12
+G = (V,E)
